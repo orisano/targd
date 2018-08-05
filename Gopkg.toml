@@ -24,14 +24,13 @@
 #   go-tests = true
 #   unused-packages = true
 
-
-[[constraint]]
-  name = "github.com/k0kubun/pp"
-  version = "2.3.0"
-
 [[constraint]]
   branch = "master"
   name = "github.com/moby/buildkit"
+
+[[override]]
+  name = "github.com/docker/docker"
+  revision = "71cd53e4a197b303c6ba086bd584ffd67a884281"
 
 [prune]
   go-tests = true

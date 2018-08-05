@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:4651b2cce1149c5ecab0b058246128d8f4c0949a5df15ca5d376f6d00561c390"
+  digest = "1:273e49f787dc9dde3738f358295ce9fc4c75158794a1daeed12109c4724a6ed5"
   name = "github.com/docker/docker"
   packages = [
     "api/types/blkiodev",
@@ -11,8 +11,7 @@
     "api/types/strslice",
   ]
   pruneopts = "UT"
-  revision = "092cba3727bb9b4a2f0e922cd6c0f93ea270e363"
-  version = "v1.13.1"
+  revision = "71cd53e4a197b303c6ba086bd584ffd67a884281"
 
 [[projects]]
   digest = "1:ade935c55cd6d0367c843b109b09c9d748b1982952031414740750fdf94747eb"
@@ -40,7 +39,7 @@
     "frontend/dockerfile/parser",
   ]
   pruneopts = "UT"
-  revision = "e57eed420c7573ae44875be98fa877175b4677a1"
+  revision = "7e98ece83d11e4a5eeeedb212a945c0de5756379"
 
 [[projects]]
   digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
