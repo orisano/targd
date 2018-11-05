@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:273e49f787dc9dde3738f358295ce9fc4c75158794a1daeed12109c4724a6ed5"
+  digest = "1:56468f309cd2f9e0401eebc7d0da062eb9bbb572c955adfa5818ca5c5b1f6f85"
   name = "github.com/docker/docker"
   packages = [
     "api/types/blkiodev",
@@ -31,7 +31,7 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:853848ba06ce5946098efe0774e5855cf2a012c120507eb341fab182a6bf68d9"
+  digest = "1:d49cc83f9e0c3f2dfcdb97c2ebf762ece44705382d85faac0ff311d2ac61d9f3"
   name = "github.com/moby/buildkit"
   packages = [
     "frontend/dockerfile/command",
@@ -39,7 +39,7 @@
     "frontend/dockerfile/parser",
   ]
   pruneopts = "UT"
-  revision = "7e98ece83d11e4a5eeeedb212a945c0de5756379"
+  revision = "5aab8299d5069e3a8751e4848ee546df2f165896"
 
 [[projects]]
   digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
