@@ -17,6 +17,10 @@ $ targd
 ```bash
 $ targd -target test | docker build -f - .
 ```
+or
+```bash
+$ docker run -v $(PWD):/host orisano/targd -f /host/Dockerfile -target production
+```
 
 ## Example
 ```dockerfile
