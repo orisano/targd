@@ -1,5 +1,5 @@
 # targd
-targd is multistage build optimizer.
+targd is multistage build helper. targd outputs dependent stage of the specified target stage. (includes target stage)
 
 ## Installation
 ```bash
@@ -19,8 +19,8 @@ $ targd -target test | docker build -f - .
 ```
 
 ## Example
-Dockerfile
 ```dockerfile
+# ./Dockerfile
 FROM alpine:3.8 as builder
 COPY ./depfile ./lockfile ./
 RUN install_cmd
