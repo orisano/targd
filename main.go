@@ -29,6 +29,7 @@ func hasStage(stages []instructions.Stage, name string) (int, bool) {
 func main() {
 	target := flag.String("target", "", "target stage name (required)")
 	p := flag.String("f", "Dockerfile", "Dockerfile path")
+	out := flag.String("o", "-", "generated Dockerfile path")
 	flag.Parse()
 
 	if *target == "" {
@@ -42,20 +43,32 @@ func main() {
 	} else {
 		f, err := os.Open(*p)
 		if err != nil {
-			log.Fatal(err)
+			log.Fatal("failed to open Dockerfile:", err)
 		}
 		defer f.Close()
 		r = f
 	}
 
+	var w io.Writer
+	if *out == "-" {
+		w = os.Stdout
+	} else {
+		f, err := os.Create(*out)
+		if err != nil {
+			log.Fatal("failed to create Dockerfile:", err)
+		}
+		defer f.Close()
+		w = f
+	}
+
 	result, err := parser.Parse(r)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("failed to parse Dockerfile:", err)
 	}
 
 	stages, _, err := instructions.Parse(result.AST)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal("failed to parse instructions:", err)
 	}
 
 	required := make(map[string]struct{})
@@ -97,10 +110,10 @@ func main() {
 			continue
 		}
 
-		fmt.Println(stage.SourceCode)
+		fmt.Fprintln(w, stage.SourceCode)
 		for _, cmd := range stage.Commands {
-			fmt.Println(cmd)
+			fmt.Fprintln(w, cmd)
 		}
-		fmt.Println()
+		fmt.Fprintln(w)
 	}
 }
