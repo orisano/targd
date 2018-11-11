@@ -11,6 +11,8 @@ go get github.com/orisano/targd
 $ targd
   -f string
     	Dockerfile path (default "Dockerfile")
+  -o string
+    	generated Dockerfile path (default "-")
   -target string
     	target stage name (required)
 ```
