@@ -39,7 +39,7 @@
     "frontend/dockerfile/parser",
   ]
   pruneopts = "UT"
-  revision = "5aab8299d5069e3a8751e4848ee546df2f165896"
+  revision = "594f95bc1d15c3218bdbf4635993b4ecda3e3cc9"
 
 [[projects]]
   digest = "1:40e195917a951a8bf867cd05de2a46aaf1806c50cf92eebf4c16f78cd196f747"
