@@ -7,6 +7,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/moby/buildkit/frontend/dockerfile/instructions"
 	"github.com/moby/buildkit/frontend/dockerfile/parser"
@@ -71,21 +72,28 @@ func main() {
 		log.Fatal("failed to parse instructions:", err)
 	}
 
+	byName := map[string]int{}
+	for i := range stages {
+		if stages[i].Name == "" {
+			stages[i].Name = strconv.Itoa(i)
+		}
+		byName[strings.ToLower(stages[i].Name)] = i
+	}
+
 	required := make(map[string]struct{})
 
 	var visitStage func(string)
 	visitStage = func(name string) {
-		if _, ok := required[name]; ok {
+		if _, ok := required[strings.ToLower(name)]; ok {
 			return
 		}
-		i, ok := hasStage(stages, name)
+		i, ok := byName[strings.ToLower(name)]
 		if !ok {
 			log.Fatalf("unknown stage: %v", name)
 		}
-
-		required[name] = struct{}{}
+		required[strings.ToLower(name)] = struct{}{}
 		stage := stages[i]
-		if _, ok := instructions.HasStage(stages, stage.BaseName); ok {
+		if _, ok := byName[strings.ToLower(stage.BaseName)]; ok {
 			visitStage(stage.BaseName)
 		}
 		for _, cmd := range stage.Commands {
@@ -96,17 +104,16 @@ func main() {
 			if copyCmd.From == "" {
 				continue
 			}
-			visitStage(copyCmd.From)
+			if _, ok := byName[strings.ToLower(copyCmd.From)]; ok {
+				visitStage(copyCmd.From)
+			}
 		}
 	}
 	visitStage(*target)
 
-	for i, stage := range stages {
+	for _, stage := range stages {
 		name := stage.Name
-		if name == "" {
-			name = strconv.Itoa(i)
-		}
-		if _, ok := required[name]; !ok {
+		if _, ok := required[strings.ToLower(name)]; !ok {
 			continue
 		}
 
