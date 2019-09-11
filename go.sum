@@ -1,4 +1,4 @@
-github.com/docker/docker v0.0.0-20180531152204-71cd53e4a197 h1:50flEdTRgNTNeaPWpjcFB6YoUMDyltYtXDpfQbN0nNg=
+github.com/docker/docker v0.0.0-20180531152204-71cd53e4a197 h1:raQhUHOMIAZAWHmo3hLEwoIy0aVkKb2uxZdWw/Up+HI=
 github.com/docker/docker v0.0.0-20180531152204-71cd53e4a197/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
 github.com/docker/go-connections v0.4.0 h1:El9xVISelRB7BuFusrZozjnkIM5YnzCViNKohAFqRJQ=
 github.com/docker/go-connections v0.4.0/go.mod h1:Gbd7IOopHjR8Iph03tsViu4nIes5XhDvyHbTtUxmeec=

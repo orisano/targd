@@ -1,4 +1,4 @@
-FROM golang:1.12-alpine3.10 as build
+FROM golang:1.13-alpine3.10 as build
 WORKDIR /go/src/github.com/orisano/targd
 RUN apk add --no-cache gcc musl-dev
 COPY . .

@@ -1,6 +1,6 @@
 module github.com/orisano/targd
 
-go 1.12
+go 1.13
 
 require (
 	github.com/docker/docker v0.0.0-20180531152204-71cd53e4a197
