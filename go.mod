@@ -8,4 +8,5 @@ require (
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/moby/buildkit v0.8.3
 	github.com/stretchr/testify v1.6.1 // indirect
+	google.golang.org/protobuf v1.27.1 // indirect
 )
