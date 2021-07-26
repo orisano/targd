@@ -13,20 +13,6 @@ import (
 	"github.com/moby/buildkit/frontend/dockerfile/parser"
 )
 
-func hasStage(stages []instructions.Stage, name string) (int, bool) {
-	if i, ok := instructions.HasStage(stages, name); ok {
-		return i, true
-	}
-	i, err := strconv.Atoi(name)
-	if err != nil {
-		return -1, false
-	}
-	if i < 0 || len(stages) <= i {
-		return -1, false
-	}
-	return i, true
-}
-
 func main() {
 	target := flag.String("target", "", "target stage name (required)")
 	p := flag.String("f", "Dockerfile", "Dockerfile path")
