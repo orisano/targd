@@ -4,13 +4,11 @@ go 1.23.0
 
 toolchain go1.24.0
 
-require github.com/moby/buildkit v0.23.0
+require github.com/moby/buildkit v0.24.0
 
 require (
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/containerd/typeurl/v2 v2.2.3 // indirect
-	github.com/docker/docker v28.2.2+incompatible // indirect
-	github.com/docker/go-connections v0.5.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/moby/docker-image-spec v1.3.1 // indirect
@@ -19,6 +17,5 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
 	github.com/tonistiigi/go-csvvalue v0.0.0-20240814133006-030d3b2625d0 // indirect
-	google.golang.org/protobuf v1.36.6 // indirect
-	gotest.tools/v3 v3.5.0 // indirect
+	google.golang.org/protobuf v1.36.8 // indirect
 )
